@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Age" xml:space="preserve">
+    <value>Возраст</value>
+  </data>
+  <data name="AgeFrom" xml:space="preserve">
+    <value>Возраст  с</value>
+  </data>
+  <data name="AgeTo" xml:space="preserve">
+    <value>Возраст  до</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Назад к списку</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="Coach" xml:space="preserve">
+    <value>Тренер</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Страны</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Вы действительно хотите удалить этот элемент?</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="Distinction" xml:space="preserve">
+    <value>Различие</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Кон. дата</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Жен.</value>
+  </data>
+  <data name="Fights" xml:space="preserve">
+    <value>Бои</value>
+  </data>
+  <data name="FinishedFights" xml:space="preserve">
+    <value>Оконченные бои</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Пол</value>
+  </data>
+  <data name="GenerateTable" xml:space="preserve">
+    <value>Сформировать таблицу боев</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Группы</value>
+  </data>
+  <data name="kg" xml:space="preserve">
+    <value>кг.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Круг</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Муж.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="NotDefined" xml:space="preserve">
+    <value>Не определен</value>
+  </data>
+  <data name="OneThirdPlace" xml:space="preserve">
+    <value>Одно третье  место</value>
+  </data>
+  <data name="Organizer" xml:space="preserve">
+    <value>Организатор</value>
+  </data>
+  <data name="Participant" xml:space="preserve">
+    <value>Участник</value>
+  </data>
+  <data name="Participants" xml:space="preserve">
+    <value>Участники</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Место</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Позиция</value>
+  </data>
+  <data name="Ranking" xml:space="preserve">
+    <value>Ранг</value>
+  </data>
+  <data name="Referee" xml:space="preserve">
+    <value>Судья</value>
+  </data>
+  <data name="Referees" xml:space="preserve">
+    <value>Судьи</value>
+  </data>
+  <data name="RegistrationEnd" xml:space="preserve">
+    <value>Окончание регистрации</value>
+  </data>
+  <data name="ReplaceParticipant" xml:space="preserve">
+    <value>Поменять участника</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>Требуется ввод в поле "{0}".</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Результаты</value>
+  </data>
+  <data name="Round" xml:space="preserve">
+    <value>Круг</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SelectItem" xml:space="preserve">
+    <value>Выбрать элемент</value>
+  </data>
+  <data name="Sport" xml:space="preserve">
+    <value>Вид спорта</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Нач. дата</value>
+  </data>
+  <data name="StartPage" xml:space="preserve">
+    <value>Начальная страница</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="Teams" xml:space="preserve">
+    <value>Команды</value>
+  </data>
+  <data name="Timeline" xml:space="preserve">
+    <value>График</value>
+  </data>
+  <data name="TotalPaging" xml:space="preserve">
+    <value>Страница {0} из {1} ({2} элементов)</value>
+  </data>
+  <data name="Tournament" xml:space="preserve">
+    <value>Турнир</value>
+  </data>
+  <data name="Tournaments" xml:space="preserve">
+    <value>Турниры</value>
+  </data>
+  <data name="Translation" xml:space="preserve">
+    <value>Перевод</value>
+  </data>
+  <data name="UpcomingFights" xml:space="preserve">
+    <value>Предстоящие бои</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Вес</value>
+  </data>
+  <data name="WeightFrom" xml:space="preserve">
+    <value>Вес с</value>
+  </data>
+  <data name="WeightTo" xml:space="preserve">
+    <value>Вес до</value>
+  </data>
+  <data name="Years" xml:space="preserve">
+    <value>лет</value>
+  </data>
+  <data name="GreaterThen" xml:space="preserve">
+    <value>Поле "{0}" должно быть больше чем {1}</value>
+  </data>
+  <data name="LessThen" xml:space="preserve">
+    <value>Поле "{0}" должно быть меньше чем {1}</value>
+  </data>
+  <data name="RegistrationComplete" xml:space="preserve">
+    <value>Регистрация закончена</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>дней</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Продолжительность</value>
+  </data>
+  <data name="AddTeam" xml:space="preserve">
+    <value>Добавить команду</value>
+  </data>
+  <data name="AddTournament" xml:space="preserve">
+    <value>Добавить турнир</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Управление</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Роли</value>
+  </data>
+  <data name="AddParticipant" xml:space="preserve">
+    <value>Добавить участника</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Электр. адрес</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Добавить категорию</value>
+  </data>
+  <data name="AddReferee" xml:space="preserve">
+    <value>Добавить судью</value>
+  </data>
+  <data name="DropDownButtonInfo" xml:space="preserve">
+    <value>Please use the button "{0}" to get access to another options.</value>
+  </data>
+  <data name="DropDownButton" xml:space="preserve">
+    <value>Мои действия</value>
+  </data>
+  <data name="AddTimeline" xml:space="preserve">
+    <value>Добавить график</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Элемент</value>
+  </data>
+  <data name="AddTranslation" xml:space="preserve">
+    <value>Добавить перевод</value>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>Немецкий</value>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>Японский</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="AddUnit" xml:space="preserve">
+    <value>Добавить элемент "{0}"</value>
+  </data>
+  <data name="AnotherService" xml:space="preserve">
+    <value>Используйте сторонние службы для входа</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Создать новую учетную запись.</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>Забыли пароль?</value>
+  </data>
+  <data name="LocalAccount" xml:space="preserve">
+    <value>Зайдите со своей локальной учетной записью.</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Зарегистрировать нового пользователя?</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Роль</value>
+  </data>
+  <data name="ParticipationConfirmed" xml:space="preserve">
+    <value>Участие подтверждено</value>
+  </data>
+  <data name="WaitingForConfirmation" xml:space="preserve">
+    <value>Ожидание подтверждения</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Подтвердить</value>
+  </data>
+  <data name="TwoThirdPlaces" xml:space="preserve">
+    <value>Два третьих места</value>
+  </data>
+  <data name="Winner" xml:space="preserve">
+    <value>Победил "{0}"</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Отчет</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Отчеты</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Добавить картинку</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Заменить картинку</value>
+  </data>
+  <data name="DeleteImage" xml:space="preserve">
+    <value>Удалить картинку</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запомнить</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>Войти с помощью учетной записи {0} </value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Подтвердить пароль</value>
+  </data>
+  <data name="ConfirmPasswordError" xml:space="preserve">
+    <value>Пароль и подтверждение пароля не совпадают.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Следующая</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Предыдущая</value>
+  </data>
+  <data name="EnterYourEmail" xml:space="preserve">
+    <value>Введите свой эл. адрес</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Подтверждение электронного адреса</value>
+  </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>Добавить группу</value>
+  </data>
+  <data name="ConfirmEmailError" xml:space="preserve">
+    <value>Подтвердите адрес вашей электронной почты. Чтобы сделать это, нажмите на ссылку в электронном письме, которое вы должны были получить в процессе регистрации.</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Неверная попытка входа.</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Подтвердить новый пароль</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новый пароль</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="AssociateAccount" xml:space="preserve">
+    <value>Сопоставление вашей учетной записи {0}</value>
+  </data>
+  <data name="ConfirmEmailInfo" xml:space="preserve">
+    <value>Пожалуйста проверьте Ваш почтовый ящик и подтвердите Ваш электронный адрес.</value>
+  </data>
+  <data name="ConfirmEmailSuccess" xml:space="preserve">
+    <value>Спасибо,что вы подтрердили Ваш электронный адрес.</value>
+  </data>
+</root>

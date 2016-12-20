@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNet.Identity; 
+@using IdentitySample.Models;
+@using IdentitySample.Helpers;
+@using IdentitySample.Resx;
+@using IdentitySample.Entities;
+
+@if (Request.IsAuthenticated) {
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" })) {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink(@Html.GetFullName(User.Identity.Name), "Index", "Manage", routeValues: null, htmlAttributes: new { title = AppResource.Profile, data_toggle="tooltip", data_placement="bottom" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">@AppResource.LogOff</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@AppResource.Language <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    @{
+                foreach (var lan in Enum.GetNames(typeof(Language)))
+                {
+                    string active = (CultureHelper.GetCurrentCulture()==lan)?"active":"";
+                    <li class="@active">
+                        @Html.ActionLink(((Language)Enum.Parse(typeof(Language), lan)).GetDisplayName(), "SetCulture", "Home", new { culture = lan, ReturnUrl = Request.Url.AbsolutePath }, null)
+                    </li>
+                }
+                    }
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else {
+    <ul class="nav navbar-nav navbar-right">
+        @*<li>@Html.ActionLink(AppResource.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li>@Html.ActionLink(AppResource.LogIn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@AppResource.Language <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                @{
+            foreach (var lan in Enum.GetNames(typeof(Language)))
+            {
+                string active = (CultureHelper.GetCurrentCulture() == lan) ? "active" : "";
+                <li class="@active">
+                    @Html.ActionLink(((Language)Enum.Parse(typeof(Language), lan)).GetDisplayName(), "SetCulture", "Home", new { culture = lan, ReturnUrl = Request.Url.AbsolutePath }, null)
+                </li>
+            }
+                }
+            </ul>
+        </li>
+    </ul>
+}

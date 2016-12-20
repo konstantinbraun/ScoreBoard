@@ -1,0 +1,85 @@
+﻿@model IdentitySample.Models.DisplayViewModel
+@using IdentitySample.Helpers
+@using IdentitySample.Resx
+
+@if (@Model.CurrentFight != null)
+{
+    <div class="level-info bg-green font-size-100 text-uppercase">
+        <b>@Html.Translate(Model.CurrentFight.Level)</b>
+    </div>
+    <div class="font-size-60 category-info bg-green-light">
+        <small class="text-uppercase">@AppResource.Category:</small>
+        @Model.CurrentFight.Category.Gender,
+        <small>@AppResource.Age</small>
+        @Model.CurrentFight.Category.Age,
+        <small>@AppResource.Weight</small>
+        @Model.CurrentFight.Category.Weight
+    </div>
+
+    <div class="row font-size-90">
+            <div class="col-lg-6" style="background-color: @Model.CurrentFight.FirstFighter.Distinction.Description; color: @Model.CurrentFight.SecondFighter.Distinction.Description">
+                <div class="row">
+                    <div class="col-lg-3 flag-img">
+                        <div class="thumbnail">
+                            <img src="@Model.CurrentFight.FirstFighter.Participant.Team.Country.Description" height="200" />
+                        </div>
+                    </div>
+                    <div class="col-lg-9 test">
+                        @Model.CurrentFight.FirstFighter.Participant.FirstName
+                        <strong>
+                            @Model.CurrentFight.FirstFighter.Participant.LastName
+                        </strong>
+                        <strong class="text-uppercase font-size-60">@Model.CurrentFight.FirstFighter.Participant.Team.Name</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="background-color: @Model.CurrentFight.SecondFighter.Distinction.Description; color: @Model.CurrentFight.FirstFighter.Distinction.Description">
+                <div class="row">
+                    <div class="col-lg-3 flag-img">
+                        <div class="thumbnail">
+                            <img src="@Model.CurrentFight.SecondFighter.Participant.Team.Country.Description" height="200" />
+                        </div>
+                    </div>
+                    <div class="col-lg-9 test">
+                        @Model.CurrentFight.SecondFighter.Participant.FirstName
+                        <div class="text-left">
+                            <strong>@Model.CurrentFight.SecondFighter.Participant.LastName</strong>
+                        </div>
+                        <b class="text-uppercase font-size-60">@Model.CurrentFight.SecondFighter.Participant.Team.Name</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    if (@Model.NextFight != null)
+    {
+        <div class="level-info bg-yellow font-size-80 text-uppercase">
+            @Html.Translate(Model.CurrentFight.Level)
+        </div>
+        <div class="font-size-60 category-info bg-yellow-light">
+            <small class="text-uppercase">@AppResource.Category:</small>
+            @Model.NextFight.Category.Gender,
+            <small>@AppResource.Age</small>
+            @Model.NextFight.Category.Age
+            <small>@AppResource.Weight</small>
+            @Model.NextFight.Category.Weight
+        </div>
+        @*<div class="participant">
+                <div class="color-swatch" style="background-color: @Model.NextFight.FirstFighter.Distinction.Description"></div>
+                @Model.NextFight.FirstFighter.Participant.FullName
+            </div>
+            <div>gegen</div>
+            <div class="participant">
+                <div class="color-swatch" style="background-color: @Model.NextFight.SecondFighter.Distinction.Description"></div>
+                @Model.NextFight.SecondFighter.Participant.FullName
+            </div>*@
+    }
+    else
+    {
+        <h1>No more Fights</h1>
+    }
+}
+else
+{
+    <h1>Alle Kämpfe sind abgeschlossen</h1>
+}

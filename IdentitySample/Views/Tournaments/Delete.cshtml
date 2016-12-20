@@ -1,0 +1,56 @@
+﻿@model IdentitySample.Entities.Tournament
+@using IdentitySample.Resx
+@{
+    ViewBag.Title = AppResource.Delete;
+}
+
+<h2>@AppResource.Delete</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<div>
+    <h4>@AppResource.Tournament</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@AppResource.Delete class="btn btn-default" /> |
+            @Html.ActionLink(AppResource.BackToList, "Index")
+        </div>
+    }
+</div>

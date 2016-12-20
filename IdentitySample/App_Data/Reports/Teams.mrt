@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer application="StiReport" version="1.02" type="Flex">
+  <Dictionary isKey="true" type="Dictionary" Ref="1">
+    <BusinessObjects isList="true" count="1">
+      <Teams isKey="true" type="Stimulsoft.Report.Dictionary.StiBusinessObject" Ref="2">
+        <Alias>Teams</Alias>
+        <BusinessObjects isList="true" count="1">
+          <Participants isKey="true" type="Stimulsoft.Report.Dictionary.StiBusinessObject" Ref="3">
+            <Alias>Participants</Alias>
+            <BusinessObjects isList="true" count="0"/>
+            <Category/>
+            <Columns isList="true" count="1">
+              <value>FullName,System.String</value>
+            </Columns>
+            <Dictionary isRef="1"/>
+            <Guid>5001d9dfbc014bc8b10ad08cf971723d</Guid>
+            <Name>Participants</Name>
+          </Participants>
+        </BusinessObjects>
+        <Category/>
+        <Columns isList="true" count="3">
+          <value>TournamentName,System.String</value>
+          <value>TournamentCountry,System.String</value>
+          <value>Name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1"/>
+        <Guid>bf238cfab8ee47d997cf908e20fad207</Guid>
+        <Name>Teams</Name>
+      </Teams>
+    </BusinessObjects>
+    <Databases isList="true" count="0"/>
+    <DataSources isList="true" count="0"/>
+    <Relations isList="true" count="0"/>
+    <Report isRef="0"/>
+    <Variables isList="true" count="0"/>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0"/>
+  <MetaTags isList="true" count="0"/>
+  <Pages isList="true" count="1">
+    <Page1 isKey="true" type="Page" Ref="4">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="5">
+        <PageHeaderBand1 isKey="true" type="PageHeaderBand" Ref="5">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text1 isKey="true" type="Text" Ref="6">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.1,0,4.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4"/>
+              <Parent isRef="5"/>
+              <Text>{Teams.TournamentName}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text1>
+            <Text2 isKey="true" type="Text" Ref="7">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.9,0,2,0.3</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4"/>
+              <Parent isRef="5"/>
+              <Text>{Teams.TournamentCountry}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+        </PageHeaderBand1>
+        <ReportTitleBand1 isKey="true" type="ReportTitleBand" Ref="8">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.9,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 isKey="true" type="Text" Ref="9">
+              <Brush>[86:143:189]</Brush>
+              <ClientRectangle>0,0,7.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4"/>
+              <Parent isRef="8"/>
+              <Text>{Teams.TournamentName}</Text>
+              <TextBrush>[255:255:255]</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+        </ReportTitleBand1>
+        <GroupHeaderBand1 isKey="true" type="GroupHeaderBand" Ref="10">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.6,7.72,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text6 isKey="true" type="Text" Ref="11">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,7.72,0.32</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,12,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4"/>
+              <Parent isRef="10"/>
+              <Text>{Teams.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+          </Components>
+          <Condition>{Teams.Name}</Condition>
+          <Conditions isList="true" count="0"/>
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+        </GroupHeaderBand1>
+        <DataBand2 isKey="true" type="DataBand" Ref="12">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid>5001d9dfbc014bc8b10ad08cf971723d</BusinessObjectGuid>
+          <ClientRectangle>0,2.4,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text4 isKey="true" type="Text" Ref="13">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.3,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4"/>
+              <Parent isRef="12"/>
+              <Text>{Teams.Participants.FullName}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <DataSourceName isNull="true"/>
+          <Filters isList="true" count="0"/>
+          <Name>DataBand2</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+          <Sort isList="true" count="0"/>
+        </DataBand2>
+        <GroupFooterBand1 isKey="true" type="GroupFooterBand" Ref="14">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text7 isKey="true" type="Text" Ref="15">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,7.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,12,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4"/>
+              <Parent isRef="14"/>
+              <Text>Total: {Count(DataBand2,Teams.Participants.FullName)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>GroupFooterBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+        </GroupFooterBand1>
+      </Components>
+      <Conditions isList="true" count="0"/>
+      <Guid>35f19e724d3140b1bc4d67ba2c4d86ce</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>8.5</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0"/>
+      <Watermark isKey="true" type="Stimulsoft.Report.Components.StiWatermark" Ref="16">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings isKey="true" type="Stimulsoft.Report.Print.StiPrinterSettings" Ref="17"/>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>01/18/2015 02:28:17 PM</ReportChanged>
+  <ReportCreated>01/18/2015 02:12:19 PM</ReportCreated>
+  <ReportFile/>
+  <ReportGuid>c8cb85894b158fe7b9bffd2c92ba1805</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2014.3.5</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+        #endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0"/>
+</StiSerializer>

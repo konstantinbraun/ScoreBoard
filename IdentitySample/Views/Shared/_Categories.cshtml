@@ -1,0 +1,67 @@
+﻿@model IdentitySample.Models.TableViewModel<Category>
+@using IdentitySample.Helpers;
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Weight)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableData)
+        {
+            <tr>
+                <td>
+                    @if (item.OneThirdPlace)
+                    {
+                        <span class="glyphicon glyphicon-tasks" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="@AppResource.OneThirdPlace"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-tasks disable-item-color" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="@AppResource.TwoThirdPlaces"></span>
+                    }
+                    @Html.ActionLink(IdentitySample.Resx.AppResource.Participants, "Details", "Categories", new { id = item.Id }, null)
+                    <span class="badge">@Html.Action("GetParticipantsCount", "Categories", new { id = item.Id })</span>
+                </td>
+                <td>
+                    @item.Gender.GetDisplayName()
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @if (Model.TournamentOrganizer == User.Identity.Name)
+                    {
+                        <span>
+                            @Html.ActionLink(AppResource.Edit, "Edit", Model.ChildController, new { id = item.Id }, null) |
+                            @Html.ActionLink(AppResource.Delete, "Delete", Model.ChildController, new { id = item.Id }, null)
+                        </span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                @Html.Partial("_TableFooter", @Html.ConvertToPageFoter<Category>(Model))
+            </td>
+        </tr>
+    </tfoot>
+</table>

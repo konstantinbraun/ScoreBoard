@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Age" xml:space="preserve">
+    <value>Alter</value>
+  </data>
+  <data name="AgeFrom" xml:space="preserve">
+    <value>Alter von</value>
+  </data>
+  <data name="AgeTo" xml:space="preserve">
+    <value>Alter bis</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Zurück zur Liste</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Geburtsdatum</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorien</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Stadt</value>
+  </data>
+  <data name="Coach" xml:space="preserve">
+    <value>Trainer</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Länder</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie das löschen möchten?</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Distinction" xml:space="preserve">
+    <value>Unterscheidung</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Enddatum</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Weiblich</value>
+  </data>
+  <data name="Fights" xml:space="preserve">
+    <value>Kämpfe</value>
+  </data>
+  <data name="FinishedFights" xml:space="preserve">
+    <value>Beendete Kämpfe</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>von</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Geschlecht</value>
+  </data>
+  <data name="GenerateTable" xml:space="preserve">
+    <value>Kampftabelle erstellen</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Gruppen</value>
+  </data>
+  <data name="kg" xml:space="preserve">
+    <value>kg.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Runde</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Männlich</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NotDefined" xml:space="preserve">
+    <value>Nicht definiert</value>
+  </data>
+  <data name="OneThirdPlace" xml:space="preserve">
+    <value>Ein dritter Platz</value>
+  </data>
+  <data name="Organizer" xml:space="preserve">
+    <value>Organisator</value>
+  </data>
+  <data name="Participant" xml:space="preserve">
+    <value>Teilnehmer</value>
+  </data>
+  <data name="Participants" xml:space="preserve">
+    <value>Teilnehmer</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Platz</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Ranking" xml:space="preserve">
+    <value>Rang</value>
+  </data>
+  <data name="Referee" xml:space="preserve">
+    <value>Schiedsrichter</value>
+  </data>
+  <data name="Referees" xml:space="preserve">
+    <value>Schiedsrichter</value>
+  </data>
+  <data name="RegistrationEnd" xml:space="preserve">
+    <value>Anmeldungsfrist</value>
+  </data>
+  <data name="ReplaceParticipant" xml:space="preserve">
+    <value>Teilnehmer austauschen</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>Das Feld "{0}" ist erforderlich.</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Ergebnisse</value>
+  </data>
+  <data name="Round" xml:space="preserve">
+    <value>Runde</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="SelectItem" xml:space="preserve">
+    <value>Element auswählen</value>
+  </data>
+  <data name="Sport" xml:space="preserve">
+    <value>Sportart</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Startdatum</value>
+  </data>
+  <data name="StartPage" xml:space="preserve">
+    <value>Startseite</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Mannschaft</value>
+  </data>
+  <data name="Teams" xml:space="preserve">
+    <value>Mannschaften</value>
+  </data>
+  <data name="Timeline" xml:space="preserve">
+    <value>Zeitplan</value>
+  </data>
+  <data name="TotalPaging" xml:space="preserve">
+    <value>Seite {0} von {1} ({2} Elemente)</value>
+  </data>
+  <data name="Tournament" xml:space="preserve">
+    <value>Turnier</value>
+  </data>
+  <data name="Tournaments" xml:space="preserve">
+    <value>Turniere</value>
+  </data>
+  <data name="Translation" xml:space="preserve">
+    <value>Übersetzung</value>
+  </data>
+  <data name="UpcomingFights" xml:space="preserve">
+    <value>Bevorstehende Kämpfe</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Gewicht</value>
+  </data>
+  <data name="WeightFrom" xml:space="preserve">
+    <value>Gewicht von</value>
+  </data>
+  <data name="WeightTo" xml:space="preserve">
+    <value>Gewicht bis</value>
+  </data>
+  <data name="Years" xml:space="preserve">
+    <value>Jahre</value>
+  </data>
+  <data name="GreaterThen" xml:space="preserve">
+    <value>Das Feld "{0}" muss größer als {1} sein</value>
+  </data>
+  <data name="LessThen" xml:space="preserve">
+    <value>Das Feld "{0}" muss kleiner als {1} sein</value>
+  </data>
+  <data name="RegistrationComplete" xml:space="preserve">
+    <value>Registrierung ist abgeschlossen</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Tage</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Dauer</value>
+  </data>
+  <data name="AddTeam" xml:space="preserve">
+    <value>Mannschaft hinzufügen</value>
+  </data>
+  <data name="AddTournament" xml:space="preserve">
+    <value>Turnier hinzufügen</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Verwaltung</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="AddParticipant" xml:space="preserve">
+    <value>Teilnehmer hinzufügen</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Kennwort</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Kategorie hinzufüfen</value>
+  </data>
+  <data name="AddReferee" xml:space="preserve">
+    <value>Schiedsrichter hinzufügen</value>
+  </data>
+  <data name="DropDownButtonInfo" xml:space="preserve">
+    <value>Benutzen Sie die Schaltfläche "{0}" für mehr Optionen.</value>
+  </data>
+  <data name="DropDownButton" xml:space="preserve">
+    <value>Meine Aktionen</value>
+  </data>
+  <data name="AddTimeline" xml:space="preserve">
+    <value>Zeitplan hinzufügen</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Karte</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Aktualisierung...</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Einheit</value>
+  </data>
+  <data name="AddTranslation" xml:space="preserve">
+    <value>Übersetzung hinzufügen</value>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>Japanisch</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Russisch</value>
+  </data>
+  <data name="AddUnit" xml:space="preserve">
+    <value>Einheit "{0}" hinzufügen</value>
+  </data>
+  <data name="AnotherService" xml:space="preserve">
+    <value>Einen anderen Dienst zum Anmelden verwenden.</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Benutzerkonto erstellen.</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>Kennwort vergessen?</value>
+  </data>
+  <data name="LocalAccount" xml:space="preserve">
+    <value>Lokales Konto für die Anmeldung verwenden.</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrieren</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Als neuer Benutzer registrieren.</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rolle</value>
+  </data>
+  <data name="ParticipationConfirmed" xml:space="preserve">
+    <value>Teilnahme zugesagt</value>
+  </data>
+  <data name="WaitingForConfirmation" xml:space="preserve">
+    <value>Teilnahme nicht bestätigt</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Bestätigen</value>
+  </data>
+  <data name="TwoThirdPlaces" xml:space="preserve">
+    <value>Zwei dritte Plätze</value>
+  </data>
+  <data name="Winner" xml:space="preserve">
+    <value>Der Sieger ist "{0}"</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Berichte</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Bild hinzufügen</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Bild austauschen</value>
+  </data>
+  <data name="DeleteImage" xml:space="preserve">
+    <value>Bild löschen</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Speichern?</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>Mit Ihrem {0}-Konto anmelden</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Kennwort bestätigen</value>
+  </data>
+  <data name="ConfirmPasswordError" xml:space="preserve">
+    <value>Das Kennwort stimmt nicht mit dem Bestätigungskennwort überein.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="EnterYourEmail" xml:space="preserve">
+    <value>Geben Sie Ihre E-Mail Adresse ein.</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Bestätigung der E-Mail Adresse</value>
+  </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>Gruppe hinzufügen</value>
+  </data>
+  <data name="ConfirmEmailError" xml:space="preserve">
+    <value>Bestätigen Sie Ihre E-Mail Adresse. Um es zu tun, klicken Sie auf den Link in der E-Mail, die Sie während der Registrierung erhalten haben sollen.</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Ungültiger Anmeldeversuch.</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Neues Kennwort bestätigen</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Neues Kennwort</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Kennwort ändern</value>
+  </data>
+  <data name="AssociateAccount" xml:space="preserve">
+    <value>Zuordnung Ihres {0} Kontos</value>
+  </data>
+  <data name="ConfirmEmailInfo" xml:space="preserve">
+    <value>Prüfen Sie bitte Ihr E-Mail Pastfach und bestätigen Sie Ihre E-Mail Adresse.</value>
+  </data>
+  <data name="ConfirmEmailSuccess" xml:space="preserve">
+    <value>Danke, dass Sie Ihre E-Mail Adresse bestätigt haben.</value>
+  </data>
+</root>

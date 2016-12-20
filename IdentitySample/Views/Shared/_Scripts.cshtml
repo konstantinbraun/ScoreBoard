@@ -1,0 +1,20 @@
+﻿@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/globalization")
+@Scripts.Render("~/bundles/datepicker")
+
+@{
+    string lan = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+    string js1 = String.Format("/Scripts/globalize/cultures/globalize.culture.{0}.js", lan);
+    string js2 = String.Format("/Scripts/locales/bootstrap-datepicker.{0}.js", lan);
+    <script src="@js1"></script>
+    <script src="@js2"></script>
+    <script type="text/javascript">
+        if (!Modernizr.inputtypes.date) {
+            $(function () {
+                $(".datecontrol").datepicker({ language: '@lan' });
+            });
+        }
+    </script>
+}
+
+

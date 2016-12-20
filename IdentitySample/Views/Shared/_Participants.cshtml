@@ -1,0 +1,106 @@
+﻿@model IdentitySample.Models.TableViewModel<Participant>
+@using IdentitySample.Helpers;  
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].FullName)
+            </th>
+            @if (Model.Controller != "Teams")
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.TableData[0].TeamId)
+                </th>
+            }
+            <th>
+                @Ajax.ActionLink("Ranking", "Details", new { id = ViewContext.RouteData.Values["id"] }, new AjaxOptions()
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "post",
+                            OnBegin = "OnBegin()",
+                            OnComplete = "OnComplete()",
+                            UpdateTargetId = "UpdatedTable",
+                            Url = Url.Action("Confirm", Model.ChildController, new { active = Model.Active, id = ViewContext.RouteData.Values["id"], page = Model.TableData.PageNumber })
+                        }, new { @class = "glyphicon glyphicon-bookmark disable-item-color", @data_toggle = "tooltip", @data_placement = "top", @title = AppResource.Confirm, field = "ranking", direction = "acs" })
+
+                @Html.DisplayNameFor(model => model.TableData[0].RankingId)
+                @Html.ActionLink("des", "Details", new { id = ViewContext.RouteData.Values["id"], field = "ranking", direction = "desd" }, null)
+                <a href="#" >
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].WeightMeasure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Gender)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableData)
+        {
+            <tr>
+                <td>
+                    @if (!item.Team.ParticipationConfirmed)
+                    {
+                        <span class="glyphicon glyphicon-user disable-item-color" data-toggle="tooltip" data-placement="top" title="@AppResource.WaitingForConfirmation" aria-hidden="true"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-user" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="@AppResource.ParticipationConfirmed"></span>
+                    }
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                @if (Model.Controller != "Teams")
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team.Name)
+
+                        @*@if (item.Team.Country.Image != null)
+                        {
+                            <img src="/en/Images/Details/@item.Team.CountryId" alt="@item.Team.Country.Name" />
+                        }*@
+                    </td>
+                }
+                <td>
+                    @item.Ranking.Translate()
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeightMeasure)
+                </td>
+                <td>
+                    @item.Gender.GetDisplayName()
+                </td>
+                <td>
+                    @if ((Model.Controller.Equals("Teams") && (Model.TournamentOrganizer == User.Identity.Name ||
+                    Model.TeamCoach == User.Identity.Name && Model.TournamentStatus == TournamentStatus.OpenedForRegistration)))
+                    {
+                        <span>
+                            @Html.ActionLink(IdentitySample.Resx.AppResource.Edit, "Edit", Model.ChildController, new { id = item.Id }, null) |
+                            @Html.ActionLink(IdentitySample.Resx.AppResource.Delete, "Delete", Model.ChildController, new { id = item.Id }, null)
+                        </span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">
+                @Html.Partial("_TableFooter", @Html.ConvertToPageFoter<Participant>(Model))
+            </td>
+        </tr>
+    </tfoot>
+</table>
+

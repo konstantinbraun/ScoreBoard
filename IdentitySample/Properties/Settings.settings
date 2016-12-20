@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IdentitySample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="mailAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">romashenko_kot@hotmail.com</Value>
+    </Setting>
+    <Setting Name="mailPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">victory</Value>
+    </Setting>
+    <Setting Name="googleMapKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AIzaSyAWteMEgr3tObaaA6ZEp9YS81Kj3eqp1P4</Value>
+    </Setting>
+    <Setting Name="facebookAppId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">719179888175389</Value>
+    </Setting>
+    <Setting Name="facebookAppSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">f3530049575941c6bedf669f121257b4</Value>
+    </Setting>
+    <Setting Name="googleClientId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">952441720934-dt5t7hfon2l77e5f3fbus9fervi8c673.apps.googleusercontent.com</Value>
+    </Setting>
+    <Setting Name="googleClientSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TPEehvYxOHf35F95TS6TiAxb</Value>
+    </Setting>
+    <Setting Name="mailHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.live.com</Value>
+    </Setting>
+    <Setting Name="mailDisplayName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Teest</Value>
+    </Setting>
+    <Setting Name="mailDisplayAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">romashenko_kot@hotmail.com</Value>
+    </Setting>
+    <Setting Name="ApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Score Management System</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

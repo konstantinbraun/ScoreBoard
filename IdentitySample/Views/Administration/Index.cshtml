@@ -1,0 +1,15 @@
+﻿@inherits IdentitySample.Pages.MyBasePage   
+@{
+    ViewBag.Title = IdentitySample.Resx.AppResource.Administration;
+}
+
+@Html.Partial("_PageHeader", Model)
+@Html.Partial("_PageTabs", this.NavigationService.GetTabs(ViewContext.RequestContext.RouteData, ViewContext.RequestContext.HttpContext.Request["active"]))
+
+@section Scripts {
+    @Scripts.Render("~/bundles/sms")
+}
+
+
+
+

@@ -1,0 +1,9 @@
+﻿@model DateTime
+@{
+    DateTime dt = DateTime.Now;
+    if (Model.Year > 1800)
+    {
+        dt = (System.DateTime)Model;
+    }
+    @Html.TextBox("", String.Format("{0:d}", dt), new { @class = "form-control datecontrol", type = "date" })
+}

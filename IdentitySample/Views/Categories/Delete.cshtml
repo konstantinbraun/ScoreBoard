@@ -1,0 +1,64 @@
+﻿@model IdentitySample.Entities.Category
+@using IdentitySample.Resx
+@{
+    ViewBag.Title = AppResource.Delete;
+}
+
+<h2>@AppResource.Delete</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<div>
+    <h4>@AppResource.Category</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightTo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@AppResource.Delete class="btn btn-danger" /> 
+            @Html.ActionLink(AppResource.BackToList, "Details", "Tournaments", new { id = Model.TournamentId, active = "Categories" }, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

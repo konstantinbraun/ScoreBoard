@@ -1,0 +1,42 @@
+﻿@model IdentitySample.Entities.GeneralUnit
+@using IdentitySample.Resx
+@using IdentitySample.Helpers
+
+@{
+    ViewBag.Title = AppResource.Delete ;
+}
+
+<h2>@AppResource.Delete <small>@AppResource.Unit</small></h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<div>
+    <h4>@Model.GeneralType.GetDisplayName()</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@AppResource.Delete" class="btn btn-default" /> |
+            @Html.ActionLink(AppResource.BackToList, "Details", "Groups", new { id = Model.GeneralGroup_Id }, null)
+        </div>
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model IdentitySample.Entities.Timeline
+@using IdentitySample.Resx
+@using IdentitySample.Helpers
+@{
+    ViewBag.Title = AppResource.Delete;
+}
+
+<h2>@AppResource.Delete</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<div>
+    <h4>@AppResource.Timeline</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @string.Format("{0} [{1}] [{2}]",  Model.Category.Gender.GetDisplayName(), Model.Category.Age, Model.Category.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LevelId)
+        </dt>
+
+        <dd>
+            @Html.Translate(Model.Level)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@AppResource.Delete class="btn btn-default" /> |
+            @Html.ActionLink(AppResource.BackToList, "Details", "Referees", new { id = Model.RefereeId, active = "Timeline" }, null)
+        </div>
+    }
+</div>

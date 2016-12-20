@@ -1,0 +1,76 @@
+﻿.font-size-60 {
+    font-size: 60px;
+}
+
+.font-size-70 {
+    font-size: 70px;
+}
+
+.font-size-80 {
+    font-size: 80px;
+}
+
+.font-size-90 {
+    font-size: 90px;
+}
+
+.font-size-100 {
+    font-size: 100px;
+}
+
+.font-size-110  {
+    font-size: 110px;
+}
+
+.font-size-120  {
+    font-size: 120px;
+}
+
+.level-info {
+    color: #d4d4d4;
+    padding: 0 0 0 20px;
+    line-height: 90%;
+}
+
+.category-info {
+    color: white;
+    padding: 0 20px 0 20px;
+}
+
+
+.bg-white {
+    background-color:white;
+}
+
+.bg-green {
+    background-color: #0b620b;
+}
+
+.bg-green-light {
+    background-color: #15a115;
+}
+
+.bg-yellow {
+    background-color: #b14c04;
+}
+
+.bg-yellow-light {
+    background-color: #ff6a00;
+}
+
+.flag-img {
+    padding: 20px 20px;
+}
+
+.test {
+    line-height: 95%;
+    padding: 20px 0 20px 0;
+}
+
+#DisplayInfo {
+    padding: 0;
+}
+ 
+.row {
+    margin:0;
+}

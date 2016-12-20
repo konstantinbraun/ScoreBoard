@@ -1,0 +1,80 @@
+﻿@model IdentitySample.Models.TableViewModel<Fight>
+@using IdentitySample.Helpers;
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            @if (Model.Active != "Competitions")
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.TableData[0].CategoryId)
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].FirstFighter)
+                <span>#1</span>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].SecondFighter)
+                <span>#2</span>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].LevelId)
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @{
+            bool firstItem = (Model.TournamentOrganizer.Equals(User.Identity.Name));
+            foreach (var item in Model.TableData)
+            {
+                <tr>
+                    @if (Model.Active != "Competitions")
+                    {
+                        <td>
+                            @if (firstItem && Model.Active == "OpenedCompetitions")
+                            {
+                                <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+                            }
+                            @Html.ActionLink(string.Format("{0} [{1}] [{2}]", item.Category.Gender.GetDisplayName(), item.Category.Age, item.Category.Weight), "Details", "Categories", new { id = item.CategoryId }, null)
+                        </td>
+                    }
+                    <td>
+                        @if (item.FirstFighter != null)
+                        {
+                            @Html.Action("GetFighter", "Fights", new { id = item.FirstFighter.Id, active = Model.Active, showWinnerItem = firstItem })
+                        }
+                        else
+                        {
+                            <span>@AppResource.NotDefined</span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.SecondFighter != null)
+                        {
+                            @Html.Action("GetFighter", "Fights", new { id = item.SecondFighter.Id, active = Model.Active, showWinnerItem = firstItem })
+                        }
+                        else
+                        {
+                            <span>@AppResource.NotDefined</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.Translate(item.Level)
+                    </td>
+                </tr>
+                        firstItem = false;
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                @Html.Partial("_TableFooter", @Html.ConvertToPageFoter<Fight>(Model))
+            </td>
+        </tr>
+    </tfoot>
+</table>

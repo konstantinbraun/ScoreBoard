@@ -1,0 +1,48 @@
+﻿@model IdentitySample.Models.TableViewModel<Timeline>
+@using IdentitySample.Helpers;
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].LevelId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableData)
+        {
+            <tr>
+                <td>
+                    @string.Format("{0} [{1}] [{2}]", item.Category.Gender.GetDisplayName(), item.Category.Age, item.Category.Weight)
+                </td>
+                <td>
+                    @Html.Translate(@item.Level)
+                </td>
+                <td>
+                    @if (User.Identity.Name.Equals(item.Category.Tournament.Organizer))
+                    {
+                        <span>
+                            @Html.ActionLink(AppResource.Edit, "Edit", Model.ChildController, new { id = item.Id }, null) |
+                            @Html.ActionLink(AppResource.Delete, "Delete", Model.ChildController, new { id = item.Id }, null)
+                        </span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                @Html.Partial("_TableFooter", @Html.ConvertToPageFoter<Timeline>(Model))
+            </td>
+        </tr>
+    </tfoot>
+</table>
+

@@ -1,0 +1,117 @@
+﻿@model IdentitySample.Models.ParticipantViewModel
+@using IdentitySample.Resx
+@using System.Globalization
+@{
+    ViewBag.Title = AppResource.Create;
+}
+
+<h2>@AppResource.Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Participant.TeamId)
+    <div class="form-horizontal">
+        <h4>@AppResource.Participant</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Participant.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Participant.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Participant.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Participant.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Participant.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Participant.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Participant.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Participant.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Participant.BirthDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Participant.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Participant.Gender, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Participant.Gender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Participant.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="input-group">
+                    <span class="input-group-addon">@IdentitySample.Resx.AppResource.kg</span>
+                    @Html.EditorFor(model => model.Participant.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.Participant.Weight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Participant.RankingId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Participant.RankingId, Model.RankingList, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Participant.RankingId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@AppResource.Create class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink(@AppResource.BackToList, "Details", "Teams", new { id = Model.Participant.TeamId }, null)
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src=@String.Format("/Scripts/jquery.globalize/cultures/globalize.culture.{0}.js", CultureInfo.CurrentCulture.TwoLetterISOLanguageName) type="text/javascript"></script>
+
+    @Scripts.Render("~/bundles/datepicker")
+    <script src=@String.Format("/Scripts/locales/bootstrap-datepicker.{0}.js", CultureInfo.CurrentCulture.TwoLetterISOLanguageName) type="text/javascript"></script>
+
+    <script type="text/javascript">
+        if (!Modernizr.inputtypes.date) {
+            $(function () {
+                $(".datecontrol").datepicker({ language: '@CultureInfo.CurrentCulture.TwoLetterISOLanguageName' });
+            });
+        }
+
+        $(function () {
+            //$.culture = jQuery.cultures['de'];
+            //$.preferCulture($.culture.name);
+            //Globalization.preferCulture($.culture.name);
+
+            $.validator.methods.number = function (value, element) {
+                if (Globalize.parseFloat(value, null, "@CultureInfo.CurrentCulture.TwoLetterISOLanguageName")) {
+                    return true;
+                }
+                return false;
+            }
+
+            $.validator.methods.date = function (value, element) {
+                //Globalize.culture("de");
+                // you can alternatively pass the culture to parseDate instead of
+                // setting the culture above, like so:
+                // parseDate(value, null, "en-AU")
+                return this.optional(element) || Globalize.parseDate(value, null, "@CultureInfo.CurrentCulture.TwoLetterISOLanguageName") !== null;
+            }
+        });
+    </script>
+}

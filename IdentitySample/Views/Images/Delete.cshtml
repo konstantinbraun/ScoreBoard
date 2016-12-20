@@ -1,0 +1,29 @@
+﻿@model IdentitySample.Models.UploadViewModel
+@using IdentitySample.Resx
+@using IdentitySample.Helpers
+
+@{
+    ViewBag.Title = AppResource.DeleteImage;
+}
+
+<h2>@AppResource.DeleteImage</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<div>
+    <h4>@Model.UnitName</h4>
+    <hr />
+
+    <div class="thumbnail div-max-width">
+        <img src="/en/Images/Details/@Model.Id?width=300" alt="@Model.UnitName" />
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@AppResource.Delete" class="btn btn-default" /> |
+            @Html.ActionLink(AppResource.BackToList, "Details", "Units", new { id = Model.Id }, null)
+        </div>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@model IdentitySample.Models.TimelineViewModel 
+@using IdentitySample.Resx
+@{
+    ViewBag.Title = AppResource.Create;
+}
+
+<h2>@AppResource.Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model=>model.TimelineItem.RefereeId )
+    <div class="form-horizontal">
+        <h4>@AppResource.Timeline</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimelineItem.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m=>m.TimelineItem.CategoryId, Model.CategoryList, null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TimelineItem.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimelineItem.LevelId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m=>m.TimelineItem.LevelId, Model.LevelList, null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TimelineItem.LevelId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@AppResource.Create class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink(@AppResource.BackToList, "Details","Referees",new {id=Model.TimelineItem.RefereeId, active="Timeline" }, null)
+</div>

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<IdentitySample.Entities.Group>
+
+@{
+    ViewBag.Title = IdentitySample.Resx.AppResource.Groups;
+}
+
+<div id="UpdatedTable">
+    @Html.Action("GetTabs", "Tabs", new { category = Request.QueryString["section"], controller = "Home", Group = "Admin" })
+</div>

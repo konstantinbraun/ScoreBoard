@@ -1,0 +1,33 @@
+﻿@inherits IdentitySample.Pages.MyBasePage
+@{
+    ViewBag.Title = IdentitySample.Resx.AppResource.Tournaments;
+}
+
+@Html.Partial("_PageHeader", Model)
+@Html.Partial("_PageTabs", this.NavigationService.GetTabs(ViewContext.RequestContext.RouteData, ViewContext.RequestContext.HttpContext.Request["active"]))
+
+<div id="getting-started"></div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/countdown")
+    @Scripts.Render("~/bundles/sms")
+
+<script type="text/javascript">
+    function countdownUpdate() {
+        $('[data-countdown]').each(function () {
+            var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function (event) {
+                $this.html(event.strftime('%D @IdentitySample.Resx.AppResource.Days %H:%M:%S'));
+            });
+        })
+        .on('finish.countdown', function (event) {
+            $(this).html('@IdentitySample.Resx.AppResource.RegistrationComplete')
+                .parent().removeClass('label-success').addClass('label-danger');
+        });
+    }
+
+    countdownUpdate();
+</script>
+
+}
+

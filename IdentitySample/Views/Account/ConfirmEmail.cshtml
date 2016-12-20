@@ -1,0 +1,12 @@
+﻿@using IdentitySample.Resx;
+@{
+    ViewBag.Title = AppResource.ConfirmEmail;
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <p class="text-success">
+        @AppResource.ConfirmEmailSuccess
+   </p>
+    @Html.ActionLink(AppResource.LogIn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-default" })
+</div>

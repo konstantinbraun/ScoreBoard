@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySample", "IdentitySample\IdentitySample.csproj", "{ADAF14C6-BFF7-49A7-83DC-E37ECB087E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySample.Entities", "IdentitySample.Entities\IdentitySample.Entities.csproj", "{A8D9C7A1-60B1-4F22-913C-AA38D04627BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySample.Resx", "IdentitySample.Resources\IdentitySample.Resx.csproj", "{B20EC760-B75A-4DAE-914E-4381A03D7B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySample.Repository", "IdentitySample.Repository\IdentitySample.Repository.csproj", "{6EBB5C61-9C17-4D51-B1FF-B3357445A8D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySample.Service", "IdentitySample.Service\IdentitySample.Service.csproj", "{56EB73F6-9177-4C02-940B-2646BE7EB1B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySample.ViewModels", "IdentitySample.ViewModels\IdentitySample.ViewModels.csproj", "{A57FFECF-2DAF-4055-853F-951BFF818264}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADAF14C6-BFF7-49A7-83DC-E37ECB087E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAF14C6-BFF7-49A7-83DC-E37ECB087E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAF14C6-BFF7-49A7-83DC-E37ECB087E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAF14C6-BFF7-49A7-83DC-E37ECB087E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D9C7A1-60B1-4F22-913C-AA38D04627BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D9C7A1-60B1-4F22-913C-AA38D04627BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D9C7A1-60B1-4F22-913C-AA38D04627BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D9C7A1-60B1-4F22-913C-AA38D04627BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20EC760-B75A-4DAE-914E-4381A03D7B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20EC760-B75A-4DAE-914E-4381A03D7B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20EC760-B75A-4DAE-914E-4381A03D7B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20EC760-B75A-4DAE-914E-4381A03D7B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBB5C61-9C17-4D51-B1FF-B3357445A8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBB5C61-9C17-4D51-B1FF-B3357445A8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBB5C61-9C17-4D51-B1FF-B3357445A8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBB5C61-9C17-4D51-B1FF-B3357445A8D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56EB73F6-9177-4C02-940B-2646BE7EB1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56EB73F6-9177-4C02-940B-2646BE7EB1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56EB73F6-9177-4C02-940B-2646BE7EB1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56EB73F6-9177-4C02-940B-2646BE7EB1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A57FFECF-2DAF-4055-853F-951BFF818264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A57FFECF-2DAF-4055-853F-951BFF818264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A57FFECF-2DAF-4055-853F-951BFF818264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A57FFECF-2DAF-4055-853F-951BFF818264}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://label.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = IdentitySample.Entities\\IdentitySample.Entities.csproj
+		SccProjectName1 = IdentitySample.Entities
+		SccLocalPath1 = IdentitySample.Entities
+		SccProjectUniqueName2 = IdentitySample\\IdentitySample.csproj
+		SccProjectName2 = IdentitySample
+		SccLocalPath2 = IdentitySample
+		SccProjectUniqueName3 = IdentitySample.Resources\\IdentitySample.Resx.csproj
+		SccProjectName3 = IdentitySample.Resources
+		SccLocalPath3 = IdentitySample.Resources
+		SccProjectUniqueName4 = IdentitySample.Repository\\IdentitySample.Repository.csproj
+		SccProjectName4 = IdentitySample.Repository
+		SccLocalPath4 = IdentitySample.Repository
+		SccProjectUniqueName5 = IdentitySample.Service\\IdentitySample.Service.csproj
+		SccProjectName5 = IdentitySample.Service
+		SccLocalPath5 = IdentitySample.Service
+		SccProjectUniqueName6 = IdentitySample.ViewModels\\IdentitySample.ViewModels.csproj
+		SccProjectName6 = IdentitySample.ViewModels
+		SccLocalPath6 = IdentitySample.ViewModels
+	EndGlobalSection
+EndGlobal

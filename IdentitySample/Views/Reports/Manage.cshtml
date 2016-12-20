@@ -1,0 +1,25 @@
+﻿@using Stimulsoft.Report;
+@using Stimulsoft.Report.Mvc;
+@using System.Web.UI.WebControls;
+@using IdentitySample.Resx;
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>Manage</h2>
+
+@Html.Stimulsoft().StiMvcDesigner(new StiMvcDesignerOptions()
+    {
+        ActionGetReportTemplate = "GetReportTemplate",
+        ActionExportReport = "ExportReport",
+        ActionGetReportSnapshot = "GetReportSnapshot",
+        ActionCreateReportTemplate ="CreateReportTemplate",
+        ActionGetReportCode = "GetReportCode",
+        ActionGoogleDocs = "GoogleDocs",
+        ActionDataProcessing = "DataProcessing",
+        Width = Unit.Percentage(100),
+        Height = Unit.Pixel(700),
+        ActionExitDesigner = "ExitDesigner",
+          
+    })

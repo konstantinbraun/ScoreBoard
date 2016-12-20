@@ -1,0 +1,13 @@
+﻿@model IdentitySample.Entities.GeneralUnit
+
+@{
+    ViewBag.Title = IdentitySample.Resx.AppResource.Translation;
+}
+
+<div id="UpdatedTable">
+    @Html.Action("GetTabs", "Tabs", new { category = Request.QueryString["section"], controller = "GeneralUnits" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/sms")
+}

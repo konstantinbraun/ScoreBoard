@@ -1,0 +1,26 @@
+﻿@model IEnumerable<IdentitySample.Entities.Fighter>
+
+<div>
+    @{
+        bool secondRow = false;
+        foreach (var item in Model)
+        {
+            if (secondRow)
+            {
+                <abbr title="Versus" class="initialism"> vs. </abbr>
+            }
+            <h4>
+                <span class="btn btn-default" style="background-color: @item.Distinction.Description; border-color: #ccc;">
+                    @if (item.IsWinner)
+                    {
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    }
+                    @Html.DisplayFor(modelItem => item.Distinction.Name)
+                </span>
+                @Html.DisplayFor(modelItem => item.Participant.FullName) <small>@Html.DisplayFor(modelItem => item.Participant.Team.Name)</small>
+            </h4>
+            secondRow = true;
+        }
+}
+</div>
+

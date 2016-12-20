@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css_display")
+</head>
+<body>
+    <div id="DisplayInfo" class="container-fluid">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(function () {
+            var url = "@(Html.Raw(Url.Action("DisplayFullHD", "Referees", ViewContext.RouteData.Values)))";
+            $("#DisplayInfo").load(url);
+            setInterval(function () {
+                $("#DisplayInfo").load(url);
+            }, 5000);
+
+            $.ajaxSetup({ cache: false });
+        });
+    </script>
+</body>
+</html>

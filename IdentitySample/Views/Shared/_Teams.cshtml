@@ -1,0 +1,89 @@
+﻿@model IdentitySample.Models.TableViewModel<Team>   
+@using IdentitySample.Helpers;  
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Coach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].CoachRankingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].City)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableData)
+        {
+            <tr>
+                <td>
+                    @if (User.Identity.Name == item.Tournament.Organizer && !item.ParticipationConfirmed)
+                    {
+                        <span>
+                            @Ajax.ActionLink(" ", "Confirm", new { id = item.Id }, new AjaxOptions()
+                            {
+                                InsertionMode = InsertionMode.Replace,
+                                HttpMethod = "post",
+                                OnBegin = "OnBegin()",
+                                OnComplete = "OnComplete()",
+                                UpdateTargetId = "UpdatedTable",
+                                Url = Url.Action("Confirm", Model.ChildController, new { active = Model.Active, id = item.Id, page = Model.TableData.PageNumber })
+                            }, new { @class = "glyphicon glyphicon-bookmark disable-item-color", @data_toggle = "tooltip", @data_placement = "top", @title = AppResource.Confirm })
+                        </span>
+                    }
+                    else
+                    {
+                        if (item.ParticipationConfirmed)
+                        {
+                            <span class="glyphicon glyphicon-bookmark" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="@AppResource.ParticipationConfirmed"></span>
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-bookmark disable-item-color" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="@AppResource.WaitingForConfirmation"></span>
+                        }
+                    }
+
+                    @Html.ActionLink(item.Name, "Details", "Teams", new { id = item.Id }, null)
+                    <span class="badge">@item.Participants.Count()</span>
+                </td>
+
+                <td>
+                    @Html.GetFullName(item.Coach)
+                </td>
+                <td>
+                    @item.CoachRanking.Translate()
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City), @Html.Translate(@item.Country)
+                </td>
+                <td>
+                    @if (Model.TournamentStatus == TournamentStatus.OpenedForRegistration && User.Identity.Name == item.Coach)
+                    {
+                        <span>
+                            @Html.ActionLink(AppResource.Edit, "Edit", Model.ChildController, new { id = item.Id }, null) |
+                            @Html.ActionLink(AppResource.Delete, "Delete", Model.ChildController, new { id = item.Id }, null)
+                        </span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                @Html.Partial("_TableFooter", @Html.ConvertToPageFoter<Team>(Model))
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+

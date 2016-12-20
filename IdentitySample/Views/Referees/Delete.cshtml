@@ -1,0 +1,40 @@
+﻿@model IdentitySample.Entities.Referee
+@using IdentitySample.Resx
+@using IdentitySample.Helpers
+@{
+    ViewBag.Title = AppResource.Delete;
+}
+
+<h2>@AppResource.Delete</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<div>
+    <h4>@AppResource.Referee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RefereeEmail)
+        </dt>
+
+        <dd>
+            @Model.RefereeEmail.GetFullName()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position.Name)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@AppResource.Delete class="btn btn-default" /> |
+            @Html.ActionLink(@AppResource.BackToList, "Details", "Tournaments", new {id= Model.TournamentId, active="Referees" }, null)
+        </div>
+    }
+</div>

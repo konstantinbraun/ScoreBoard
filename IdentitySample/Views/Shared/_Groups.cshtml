@@ -1,0 +1,41 @@
+﻿@model IdentitySample.Models.TableViewModel<Group>
+@using IdentitySample.Helpers;
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableData)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Name, "Details", Model.ChildController, new { id = item.Id }, null)
+                </td>
+                <td>
+                    @if (!item.IsPublicGroup)
+                    {
+                        <div>
+                            @Html.ActionLink(AppResource.Edit, "Edit", Model.ChildController, new { id = item.Id }, null) |
+                            @Html.ActionLink(AppResource.Delete, "Delete", Model.ChildController, new { id = item.Id }, null)
+                        </div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                @Html.Partial("_TableFooter", @Html.ConvertToPageFoter<Group>(Model))
+            </td>
+        </tr>
+    </tfoot>
+</table>

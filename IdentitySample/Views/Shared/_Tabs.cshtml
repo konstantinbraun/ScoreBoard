@@ -1,0 +1,38 @@
+﻿@model IdentitySample.Models.TabViewModel
+@using IdentitySample.Helpers
+
+@Html.Action("GetPageHeader", Model.Controller, new { group = @Model.Tabs.Where(s => s.IsActive).Single().Group })
+
+@if (Model.Tabs.Count > 1)
+{
+    <div id="loading" class="hidden"><img src="~/Images/loader.gif" alt="Loading" height="20" /></div>
+    <ul class="nav nav-pills">
+        @foreach (var item in Model.Tabs)
+        {
+            <li role="presentation" class="@Html.IsActive(item.IsActive)">
+                @Ajax.ActionLink(item.Caption, "Details", new AjaxOptions()
+            {
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "get",
+                UpdateTargetId = "UpdatedTable",
+                OnBegin = "OnBegin()",
+                OnComplete = (item.TemplateName == "_Map" ? "OnCompleteMap()" : "OnComplete()"),
+                Url = Url.Action("Details", Model.Controller, new { active = item.Id, id = Model.Id })
+            })
+            </li>
+        }
+    </ul>
+}
+<div class="table-responsive">
+    @Html.Action(@Model.Tabs.Where(s => s.IsActive).Single().Action, @Model.Tabs.Where(s => s.IsActive).Single().Controller, new
+{
+    id = Model.Id,
+    search = Model.Search,
+    active = @Model.Active @*@Model.Tabs.Where(s => s.IsActive).Single().Id*@
+})
+</div>
+
+
+
+
+

@@ -1,0 +1,58 @@
+﻿@model IdentitySample.Models.ReportViewModel
+@using IdentitySample.Resx
+ 
+@{
+    ViewBag.Title = AppResource.Delete;
+}
+
+<h2>@AppResource.Delete</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+
+<div>
+    <h4>@AppResource.Report</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Report.Name)
+        </dt>
+    
+        <dd>
+            @Html.DisplayFor(model => model.Report.Name)
+        </dd>
+    
+        <dt>
+            @Html.DisplayNameFor(model => model.Report.Description)
+        </dt>
+    
+        <dd>
+            @Html.DisplayFor(model => model.Report.Description)
+        </dd>
+    
+        <dt>
+            @Html.DisplayNameFor(model => model.Report.FileName)
+        </dt>
+    
+        <dd>
+            @Html.DisplayFor(model => model.Report.FileName)
+        </dd>
+    
+        <dt>
+            @Html.DisplayNameFor(model => model.Report.IsAdminReport)
+        </dt>
+    
+        <dd>
+            @Html.DisplayFor(model => model.Report.IsAdminReport)
+        </dd>
+    
+    </dl>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+    
+        <div class="form-actions no-color">
+            <input type="submit" value="@AppResource.Delete" class="btn btn-default" /> |
+            @Html.ActionLink(AppResource.BackToList, "Details", "Home", new { active = "Reports" }, null)
+        </div>
+    }
+</div>

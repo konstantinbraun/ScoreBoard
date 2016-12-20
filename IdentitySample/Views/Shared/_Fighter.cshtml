@@ -1,0 +1,64 @@
+﻿@model  IdentitySample.Models.FighterViewModel
+@using IdentitySample.Resx
+@using IdentitySample.Helpers
+
+<span class="color-swatch" style="background-color: @Model.Fighter.Distinction.Description"></span>
+<div class="dropdown">
+    <span data-toggle="tooltip" data-placement="top" title="@Model.Fighter.Distinction.Translate()" aria-hidden="true">
+        @Model.Fighter.Participant.FullName
+    </span>
+
+    @if (Model.FightersToReplace.Count > 0)
+    {
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"> <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="@Model.Fighter.Id">
+            <li role="presentation" class="dropdown-header">@AppResource.ReplaceParticipant</li>
+            @foreach (var item in Model.FightersToReplace)
+            {
+                <li role="presentation">
+                    @Ajax.ActionLink(item.Participant.FullName, "Replace", "Categories", new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "get",
+                    UpdateTargetId = "UpdatedTable",
+                    OnBegin = "OnBegin()",
+                    OnComplete = "OnComplete()",
+                    Url = Url.Action("Replace", "Categories", new {first = Model.Fighter.Id, second = item.Id })
+                })
+                </li>
+            }
+        </ul>
+    }
+    else if (Model.ShowWinnerItem)
+    {
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"><span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="@Model.Fighter.Id">
+            <li role="presentation">
+                @Ajax.ActionLink(String.Format(AppResource.Winner, Model.Fighter.Distinction.Translate()), "SetWinner", "Referees", null, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "get",
+                    UpdateTargetId = "UpdatedTable",
+                    OnBegin = "OnBegin()",
+                    OnComplete = "OnComplete()",
+                    Url = Url.Action("SetWinner", "Referees", new { id = Model.Fighter.Id, refereeId = Model.RefereeId })
+                }, null )
+            </li>
+        </ul>
+    }
+    else
+    {
+        if (Model.Fighter.IsWinner)
+        {
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        }
+    }
+    / @Html.ActionLink(@Model.Fighter.Participant.Team.Name, "Details", "Teams", new {id= @Model.Fighter.Participant.TeamId }, null)
+
+    @*@if (Model.Fighter.Participant.Team.Country.Image != null)
+    {
+        <img src="/en/Images/Details/@Model.Fighter.Participant.Team.CountryId" alt="@Model.Fighter.Participant.Team.Country.Name" />
+    }*@
+</div>
+
+

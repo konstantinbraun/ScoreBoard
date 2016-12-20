@@ -1,0 +1,121 @@
+﻿body {
+    padding-top: 50px;
+    margin-bottom: 60px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.color-swatch {
+    width: 17px;
+    height: 17px;
+    border: 1px solid #DDD;
+    float: left;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+/*.nav-tabs > li.active > a:focus, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover
+{
+    background-color: #f5f5f5;
+}*/
+
+.input-group .text-box 
+{ 
+    max-width: 242px; 
+}
+
+table {
+    margin-bottom:0;
+}
+
+#map-canvas {
+    border: 1px solid #acacac;
+    margin-bottom:10px;
+    width:100%; 
+    height:300px;
+}
+
+#loading {
+    margin-top: 15px;
+    padding: 0 4px;
+    margin-right: 2px;
+    float:right;
+}
+
+.disable-item-color {
+    color:silver;
+}
+
+.disable-item-color:hover {
+    color:silver;
+    text-decoration:none;
+}
+
+.div-max-width
+{
+    max-width: 310px;
+}
+
+.table-pager
+{
+    padding:10px 0 0 20px;
+}
+
+.nav-pills {
+    padding:0 0 5px 5px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here 
+  height: 60px;*/
+  background-color: #f5f5f5;
+  border-top: 1px solid silver;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+

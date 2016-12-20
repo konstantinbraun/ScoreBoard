@@ -1,0 +1,35 @@
+﻿@model IEnumerable<IdentitySample.Service.TabItem>
+@using IdentitySample.Helpers
+
+@*<i class="fa fa-refresh fa-spin fa-2x"></i>
+
+<a class="btn btn-danger" href="#">
+    <i class="fa fa-trash-o fa-lg"></i> Delete
+</a>*@
+
+<div id="UpdatedTable">
+    <div id="loading" class="hidden">
+        <i class="fa fa-refresh fa-spin"></i>
+        @*<img src="~/Images/loader.gif" alt="Loading" height="20" />*@
+    </div>
+    <ul class="nav nav-pills">
+        @foreach (var item in Model)
+        {
+            <li role="presentation" class="@Html.IsActive(item.IsActive)">
+                @Ajax.ActionLink(item.LinkText, item.RouteValues["action"].ToString(), new AjaxOptions()
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "get",
+            UpdateTargetId = "UpdatedTable",
+            OnBegin = "OnBegin()",
+            OnComplete = (item.ActionName == "GetMap" ? "OnCompleteMap()" : "OnComplete()"),
+            Url = Url.Action(item.RouteValues["action"].ToString(), item.RouteValues)
+        })
+            </li>
+        }
+    </ul>
+
+    <div class="table-responsive">
+        @Html.Action(Model.Where(x => x.IsActive).Single().ActionName, new { group = Model.Where(x => x.IsActive).Single().GroupName })
+    </div>
+</div>

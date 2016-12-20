@@ -1,0 +1,22 @@
+﻿@using Stimulsoft.Report;
+@using Stimulsoft.Report.Mvc;
+@using System.Web.UI.WebControls;
+@using IdentitySample.Resx;
+@{
+    ViewBag.Title = AppResource.Reports;
+}
+    
+@Html.Stimulsoft().StiMvcViewer(
+    "MvcViewer1",
+    new StiMvcViewerOptions()
+    {
+        Theme = StiTheme.Office2013,
+        ActionGetReportSnapshot = "GetReportSnapshot",
+        ActionViewerEvent = "ViewerEvent",
+        BackColor = System.Drawing.Color.FromArgb(200, 200, 200),
+        Width = Unit.Percentage(100)
+    }
+)
+
+
+

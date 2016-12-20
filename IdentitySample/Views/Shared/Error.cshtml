@@ -1,0 +1,20 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = IdentitySample.Resx.AppResource.Error;
+}
+
+<h2 class="text-error">@IdentitySample.Resx.AppResource.Error</h2>
+<hr />
+@{
+    if (String.IsNullOrEmpty(ViewBag.errorMessage))
+    {
+        <p class="text-danger">An error occurred while processing your request.</p>
+    }
+    else
+    {
+        <p class="text-danger">@ViewBag.errorMessage</p>
+    }
+}
+
+@Html.ActionLink(IdentitySample.Resx.AppResource.StartPage, "Index", "Home", null, new {@class="btn btn-default"})

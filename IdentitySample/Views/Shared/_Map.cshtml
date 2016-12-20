@@ -1,0 +1,46 @@
+﻿@model IdentitySample.Entities.Tournament
+@using IdentitySample.Helpers
+
+<script type="text/javascript">
+    function InitializeMap() {
+        geocoder = new google.maps.Geocoder();
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(0, 0),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        FindLocaiton();
+    }
+
+    function FindLocaiton() {
+        var contentString = '<address><strong>@IdentitySample.Resx.AppResource.Address</strong><br>@Model.Address<br>@Model.City, @Model.Country.Translate()<br></address>';
+        geocoder.geocode({ 'address': '@Model.FullAddress' }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+
+
+        }
+        else {
+            alert("Geocode was not successful for the following reason: " + status);
+        }
+        });
+
+}
+</script>
+<div id="map-canvas"></div> 

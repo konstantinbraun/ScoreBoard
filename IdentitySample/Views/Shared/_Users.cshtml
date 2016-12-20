@@ -1,0 +1,97 @@
+﻿@model IdentitySample.Models.TableViewModel<IdentitySample.Models.ApplicationUser>
+@using IdentitySample.Helpers;
+@using IdentitySample.Entities;
+@using IdentitySample.Resx;
+@using PagedList.Mvc
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableData[0].EmailConfirmed)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableData)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.UserName, "Details", Model.ChildController, new { id = item.Id }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                </th>
+                <td>
+                    @Html.ActionLink(AppResource.Edit, "Edit", Model.ChildController, new { id = item.Id }, null) |
+                    @Html.ActionLink(AppResource.Delete, "Delete", Model.ChildController, new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <span class="text-muted small">
+                    @string.Format(IdentitySample.Resx.AppResource.TotalPaging, @Model.TableData.PageNumber, @Model.TableData.PageCount, @Model.TableData.TotalItemCount)
+                </span>
+
+                @{
+                    PagedListRenderOptions options = PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new PagedListRenderOptions()
+                    {
+                        LinkToNextPageFormat = AppResource.Next,
+                        LinkToPreviousPageFormat = AppResource.Previous,
+                        DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                        DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                        DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                        DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                        UlElementClasses = new[] { "pager" },
+                        DisplayLinkToIndividualPages = false
+                    }, new AjaxOptions()
+                    {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "UpdatedTable",
+                        OnSuccess = "OnComplete()",
+                    });
+
+                    if (ViewContext.RouteData.Values["id"] == null)
+                    {
+                        @Html.PagedListPager(Model.TableData, page => Url.Action("Index", Model.Controller, new
+        {
+            page,
+            active = Model.Active,
+            search = ViewData["search"]
+        }), options);
+                    }
+                    else
+                    {
+                        @Html.PagedListPager(Model.TableData, page => Url.Action("Details", Model.Controller, new
+        {
+            page,
+            id = ViewContext.RouteData.Values["id"],
+            active = Model.Active,
+            search = ViewData["search"]
+        }), options)
+                    }
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

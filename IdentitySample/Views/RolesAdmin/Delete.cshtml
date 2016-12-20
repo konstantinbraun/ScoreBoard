@@ -1,0 +1,32 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+@using IdentitySample.Resx
+@{
+    ViewBag.Title = AppResource.Delete;
+}
+
+<h2>@AppResource.Delete</h2>
+
+<h3>@AppResource.DeleteConfirmation</h3>
+<p>Deleting this Role will remove all users from this role. It will not delete the users.</p>
+<div>
+    <h4>@AppResource.Role</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@AppResource.Delete" class="btn btn-default" /> |
+            @Html.ActionLink(@AppResource.BackToList, "Details", "Home", new { active = "Roles" }, null)
+        </div>
+    }
+</div>
